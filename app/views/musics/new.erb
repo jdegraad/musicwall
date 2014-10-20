@@ -1,0 +1,32 @@
+<% if @music && @music.errors.any? %>
+<div>
+  <strong>
+    Some issues with your music please fix them  
+  </strong>
+  <ul>
+    <% @music.errors.full_messages.each do |music| %> <!-- full_messages is actually a predefined method -->
+    <li>
+      <%= music %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<form method = "post" action = "/musics">
+  <div>
+    <label>Song_Title:</label>
+    <input type="text" name="song_title" value="<%= @music && @music.song_title %>">
+  </div>
+  <div>
+    <label>Author:</label>
+    <input type="text" name="author" value="<%= @music && @music.author %>">
+  </div>
+  <div>
+    <label>URL:</label>
+    <input type="text" name="url" value="<%= @music && @music.url %>">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>
