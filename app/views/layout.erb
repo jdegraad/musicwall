@@ -19,5 +19,10 @@
 </head>
 <body>
   <%= yield %>
+  <footer>
+    Logged in as: <%= session[:user] %>
+    <br>
+    <a href ="/logout">logout</a>
+  </footer>
 </body>
 </html>

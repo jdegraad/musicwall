@@ -1,11 +1,19 @@
 <% @musics.each do |music| %>
 <div class = "music">
-<h3><a href="/musics/<%= music.id %>"><%= music.song_title %></a><small>(by:<%= music.author %>)</small></h3>
-<p>
-<%= music.url %>
-</p>
+	<h3>
+		<a href="/musics/<%= music.id %>"><%= music.song_title %></a>
+		<small>(by:<%= music.author %>)</small>
+	</h3>
+	<p>
+		<%= music.url %>
+	</p>
+	<form action="/musics/<%= music.id %>/upvotes" method="post">
+      <input type='submit' value='Upvote'> (<%= music.upvotes || 0 %> votes)
+    </form>
 </div>
 <% end %>
+
+	
 
 <a href = "/musics/new">Post a song... It's free (for now)</a>
 

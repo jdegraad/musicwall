@@ -4,6 +4,7 @@ class AddMusic < ActiveRecord::Migration
   		t.string :song_title
   		t.string :author
   		t.string :url
+  		# t.integer :upvotes
   		t.timestamps
   	end
   end
